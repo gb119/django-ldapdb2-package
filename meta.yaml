@@ -1,0 +1,36 @@
+{% set name = "django-ldapdb2" %}
+{% set version = "1.5.3.dev0" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 37fc1ac451907c410074fd9865e4cea96935db66d22a2821fcf8df9be9f7e011
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+    - django
+    - python-ldap
+
+about:
+  home: https://github.com/jdiego/django-ldapdb
+  license: BSD
+  license_family: BSD
+  license_file: LICENSE
+  summary: "A fork from django-ldapdb"
+  doc_url: https://github.com/jdiego/django-ldapdb
+  dev_url: https://github.com/jdiego/django-ldapb
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
